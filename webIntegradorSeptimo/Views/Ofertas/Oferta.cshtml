@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Oferta";
+    Layout = "~/Views/Shared/_Layout_Administrador.cshtml";
+}
+
+<div class="container-fluid">
+    <h3 class="texto-verde" id="titulo"><i class="fa fa-angle-right p-2 "></i> Nueva Oferta</h3>
+    <hr style="height: 1px; background-color: #4ECDC4; border: none; margin:0" />
+
+
+    <div class="container">
+        <h5 class="texto-verde mt-2 text-center" id="espere">Cargando . . .</h5>
+        <div class="card h-100 mt-3" id="contenedor" hidden>
+            <form enctype='multipart/form-data' name="frm" id="frm" class="card-body pb-4 ">
+                <input type="text" id="idOferta" name="idOferta" value="0" hidden />
+
+
+                <div class="row form-inline pt-2 col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        PRODUCTO <span class="text-danger">*</span>
+                    </div>
+                    <select class="form-control form-control-sm col-sm-5 round-form validarVacio" id="idProducto" name="idProducto">
+                    </select>
+                    <span class="text-danger font-weight-bold pl-2" id="idProductoVal" hidden>Seleccione un producto válido</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        PORCENTAJE <span class="text-danger">*</span>
+                    </div>
+                    <input type="number" class="col-sm-2 form-control form-control-sm round-form validarVacio validarIntPorcentaje text-right" id="porcentaje" name="porcentaje" value="" max="90" />
+                    <span class="text-danger font-weight-bold pl-2" id="porcentajeVal" hidden>Ingrese un porcentaje de descuento valido</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        DESCRIPCIÓN <span class="text-danger">*</span>
+                    </div>
+                    <textarea type="text" style="resize:none;" class="col-sm-5 form-control form-control-sm round-form validarVacio" id="descripcion" name="descripcion" value=""></textarea>
+                    <span class="text-danger font-weight-bold pl-2" id="descripcionVal" hidden>Ingrese una descripción</span>
+                </div>
+
+
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        FECHA INICIO <span class="text-danger">*</span>
+                    </div>
+                    <input type="date" class="col-sm-2 form-control form-control-sm round-form validarVacio" id="fecha_inicio" name="fecha_inicio" onchange="verificarFechas(this,document.getElementById('fecha_fin'))" value="" />
+                    <span class="text-danger font-weight-bold pl-2" id="fecha_inicioVal" hidden>Seleccione una fecha de inicio</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        FECHA FIN <span class="text-danger">*</span>
+                    </div>
+                    <input type="date" class="col-sm-2 form-control form-control-sm round-form validarVacio " id="fecha_fin" name="fecha_fin" onchange="verificarFechas(document.getElementById('fecha_inicio'),this)" value="" />
+                    <span class="text-danger font-weight-bold pl-2" id="fecha_finVal" hidden>Seleccione una fecha de final</span>
+                </div>
+
+                <div class="row form-inline pb-2 col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        ACTIVO <span class="text-danger">*</span>
+                    </div>
+                    <select class="form-control form-control-sm col-sm-2 round-form validarVacio" id="activo" name="activo">
+                        <option value="true">SI</option>
+                        <option value="false">NO</option>
+                    </select>
+
+                </div>
+
+                <div class="pt-4 col-sm text-center">
+                    <a class="btn btn-theme04 mr-1" href="~/Ofertas/" id="btnCancelar">CANCELAR</a>
+                    <button class="btn btn-theme" type="button" onclick="guardar(this)">GUARDAR</button>
+
+                </div>
+                <input type="text" id="vectorEliminarImagenes" name="vectorEliminarImagenes" value="" hidden />
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/js/config/navbar.js"></script>
+<script src="~/Scripts/js/system/ofertas/siteFormulario.js"></script>
+
+

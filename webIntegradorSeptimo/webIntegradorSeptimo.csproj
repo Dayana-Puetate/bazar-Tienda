@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{052E3562-F1CC-4FD9-AF7F-C503AF04CAF7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>webIntegradorSeptimo</RootNamespace>
+    <AssemblyName>webIntegradorSeptimo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44330</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\CanceladosController.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\CoberturasController.cs" />
+    <Compile Include="Controllers\ConfiguracionesController.cs" />
+    <Compile Include="Controllers\EntregadosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OfertasController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
+    <Compile Include="Controllers\ReposicionesController.cs" />
+    <Compile Include="Controllers\TiendaController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\administrador.cs" />
+    <Compile Include="Models\categoria.cs" />
+    <Compile Include="Models\cliente.cs" />
+    <Compile Include="Models\cobertura.cs" />
+    <Compile Include="Models\configuracion.cs" />
+    <Compile Include="Models\context_base.cs" />
+    <Compile Include="Models\detallePedido.cs" />
+    <Compile Include="Models\devolucion.cs" />
+    <Compile Include="Models\estado.cs" />
+    <Compile Include="Models\imagenes_producto.cs" />
+    <Compile Include="Models\logpedido.cs" />
+    <Compile Include="Models\oferta.cs" />
+    <Compile Include="Models\pedido.cs" />
+    <Compile Include="Models\producto.cs" />
+    <Compile Include="Models\recuperaClave.cs" />
+    <Compile Include="Models\reposicion.cs" />
+    <Compile Include="Negocio\detallePedidoAuxiliar.cs" />
+    <Compile Include="Negocio\Validadores.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\imprimir.css" />
+    <Content Include="Content\jclc_files\jclc_files.js" />
+    <Content Include="Content\jclc_files\style.css" />
+    <Content Include="Content\notification\build\toastr.css" />
+    <Content Include="Content\notification\build\toastr.min.css" />
+    <Content Include="Content\notification\build\toastr.min.js" />
+    <Content Include="Content\notification\demo.html" />
+    <Content Include="Content\notification\gulpfile.js" />
+    <Content Include="Content\notification\karma.conf.js" />
+    <Content Include="Content\notification\nuget\content\content\toastr.css" />
+    <Content Include="Content\notification\nuget\content\content\toastr.min.css" />
+    <Content Include="Content\notification\nuget\content\scripts\toastr.js" />
+    <Content Include="Content\notification\nuget\content\scripts\toastr.min.js" />
+    <Content Include="Content\notification\tests\qunit\qunit.css" />
+    <Content Include="Content\notification\tests\qunit\qunit.js" />
+    <Content Include="Content\notification\tests\toastr-tests.html" />
+    <Content Include="Content\notification\tests\unit\qunit-helper.js" />
+    <Content Include="Content\notification\tests\unit\toastr-tests.js" />
+    <Content Include="Content\notification\tests\unit\x.js" />
+    <Content Include="Content\notification\toastr-icon.png" />
+    <Content Include="Content\notification\toastr.js" />
+    <Content Include="Content\template_admin\404.html" />
+    <Content Include="Content\template_admin\500.html" />
+    <Content Include="Content\template_admin\advanced_form_components.html" />
+    <Content Include="Content\template_admin\advanced_table.html" />
+    <Content Include="Content\template_admin\basic_table.html" />
+    <Content Include="Content\template_admin\blank.html" />
+    <Content Include="Content\template_admin\buttons.html" />
+    <Content Include="Content\template_admin\calendar.html" />
+    <Content Include="Content\template_admin\chartjs.html" />
+    <Content Include="Content\template_admin\chat_room.html" />
+    <Content Include="Content\template_admin\contactform.html" />
+    <Content Include="Content\template_admin\contactform\contactform.php" />
+    <Content Include="Content\template_admin\contactform\Readme.txt" />
+    <Content Include="Content\template_admin\credits.txt" />
+    <Content Include="Content\template_admin\css\bootstrap_template.css" />
+    <Content Include="Content\template_admin\css\style-responsive.css" />
+    <Content Include="Content\template_admin\css\style.css" />
+    <Content Include="Content\template_admin\css\table-responsive.css" />
+    <Content Include="Content\template_admin\css\to-do.css" />
+    <Content Include="Content\template_admin\css\zabuto_calendar.css" />
+    <Content Include="Content\template_admin\dropzone.html" />
+    <Content Include="Content\template_admin\faq.html" />
+    <Content Include="Content\template_admin\file_upload.html" />
+    <Content Include="Content\template_admin\flot_chart.html" />
+    <Content Include="Content\template_admin\font_awesome.html" />
+    <Content Include="Content\template_admin\form_component.html" />
+    <Content Include="Content\template_admin\form_validation.html" />
+    <Content Include="Content\template_admin\gallery.html" />
+    <Content Include="Content\template_admin\general.html" />
+    <Content Include="Content\template_admin\google_maps.html" />
+    <Content Include="Content\template_admin\grids.html" />
+    <Content Include="Content\template_admin\img\404.png" />
+    <Content Include="Content\template_admin\img\500.png" />
+    <Content Include="Content\template_admin\img\admin_icon.png" />
+    <Content Include="Content\template_admin\img\apple-touch-icon.png" />
+    <Content Include="Content\template_admin\img\blog-bg.jpg" />
+    <Content Include="Content\template_admin\img\checkbox-gray.png" />
+    <Content Include="Content\template_admin\img\favicon.png" />
+    <Content Include="Content\template_admin\img\fondo_login.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-01.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-02.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-03.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-04.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-05.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-06.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-07.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-08.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-09.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-10.jpg" />
+    <Content Include="Content\template_admin\img\friends\fr-11.jpg" />
+    <Content Include="Content\template_admin\img\instagram.jpg" />
+    <Content Include="Content\template_admin\img\login-bg.jpg" />
+    <Content Include="Content\template_admin\img\lorde.jpg" />
+    <Content Include="Content\template_admin\img\mask.png" />
+    <Content Include="Content\template_admin\img\ny.jpg" />
+    <Content Include="Content\template_admin\img\portfolio\port01.jpg" />
+    <Content Include="Content\template_admin\img\portfolio\port02.jpg" />
+    <Content Include="Content\template_admin\img\portfolio\port03.jpg" />
+    <Content Include="Content\template_admin\img\portfolio\port04.jpg" />
+    <Content Include="Content\template_admin\img\portfolio\port05.jpg" />
+    <Content Include="Content\template_admin\img\portfolio\port06.jpg" />
+    <Content Include="Content\template_admin\img\product.jpg" />
+    <Content Include="Content\template_admin\img\profile-01.jpg" />
+    <Content Include="Content\template_admin\img\profile-02.jpg" />
+    <Content Include="Content\template_admin\img\Profile-512.png" />
+    <Content Include="Content\template_admin\img\radio-gray.png" />
+    <Content Include="Content\template_admin\img\ui-danro.jpg" />
+    <Content Include="Content\template_admin\img\ui-divya.jpg" />
+    <Content Include="Content\template_admin\img\ui-sam.jpg" />
+    <Content Include="Content\template_admin\img\ui-sherman.jpg" />
+    <Content Include="Content\template_admin\img\ui-zac.jpg" />
+    <Content Include="Content\template_admin\img\weather.jpg" />
+    <Content Include="Content\template_admin\img\zoom.png" />
+    <Content Include="Content\template_admin\inbox.html" />
+    <Content Include="Content\template_admin\index - Copy.html" />
+    <Content Include="Content\template_admin\index.html" />
+    <Content Include="Content\template_admin\inline_editor.html" />
+    <Content Include="Content\template_admin\invoice.html" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\dataTables.bootstrap.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\datatables.min.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\demo_page.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\demo_table.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\demo_table_jui.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\DT_bootstrap.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\jquery.dataTables.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\back_disabled.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\back_enabled.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\back_enabled_hover.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\details_close.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\details_open.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\favicon.ico" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\forward_disabled.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\forward_enabled.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\forward_enabled_hover.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\sort_asc.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\sort_asc_disabled.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\sort_both.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\sort_desc.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\sort_desc_disabled.png" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\js\datatables-spanish.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\js\datatables.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\js\DT_bootstrap.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\js\jquery.dataTables.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\js\jquery.dataTables.min.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\js\jquery.js" />
+    <Content Include="Content\template_admin\lib\advanced-form-components.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-daterangepicker\date.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-switch.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Content\template_admin\lib\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Content\template_admin\lib\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Content\template_admin\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\template_admin\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\template_admin\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\template_admin\lib\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\template_admin\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\template_admin\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\template_admin\lib\calendar-conf-events.js" />
+    <Content Include="Content\template_admin\lib\chart-master\Chart.js" />
+    <Content Include="Content\template_admin\lib\chartjs-conf.js" />
+    <Content Include="Content\template_admin\lib\ckeditor\ckeditor.js" />
+    <Content Include="Content\template_admin\lib\common-scripts.js" />
+    <Content Include="Content\template_admin\lib\dropzone\css\dropzone.css" />
+    <Content Include="Content\template_admin\lib\dropzone\dropzone.js" />
+    <Content Include="Content\template_admin\lib\dropzone\images\spritemap%402x.png" />
+    <Content Include="Content\template_admin\lib\dropzone\images\spritemap.png" />
+    <Content Include="Content\template_admin\lib\easy-pie-chart.js" />
+    <Content Include="Content\template_admin\lib\fancybox\jquery.fancybox.css" />
+    <Content Include="Content\template_admin\lib\fancybox\jquery.fancybox.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\css\jquery.fileupload-noscript.css" />
+    <Content Include="Content\template_admin\lib\file-uploader\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\template_admin\lib\file-uploader\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\template_admin\lib\file-uploader\css\jquery.fileupload.css" />
+    <Content Include="Content\template_admin\lib\file-uploader\img\loading.gif" />
+    <Content Include="Content\template_admin\lib\file-uploader\img\progressbar.gif" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload-audio.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload-image.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload-process.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload-validate.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload-video.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.fileupload.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\jquery.iframe-transport.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\main.js" />
+    <Content Include="Content\template_admin\lib\file-uploader\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\template_admin\lib\flotchart-conf.js" />
+    <Content Include="Content\template_admin\lib\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\template_admin\lib\flot\jquery.flot.js" />
+    <Content Include="Content\template_admin\lib\flot\jquery.flot.pie.js" />
+    <Content Include="Content\template_admin\lib\flot\jquery.flot.resize.js" />
+    <Content Include="Content\template_admin\lib\flot\jquery.flot.stack.js" />
+    <Content Include="Content\template_admin\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\template_admin\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\template_admin\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\template_admin\lib\form-component.js" />
+    <Content Include="Content\template_admin\lib\form-validation-script.js" />
+    <Content Include="Content\template_admin\lib\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Content\template_admin\lib\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\template_admin\lib\google-maps\data\points.js" />
+    <Content Include="Content\template_admin\lib\google-maps\maplace.js" />
+    <Content Include="Content\template_admin\lib\gritter-conf.js" />
+    <Content Include="Content\template_admin\lib\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\template_admin\lib\gritter\css\jquery.gritter0.css" />
+    <Content Include="Content\template_admin\lib\gritter\images\gritter-light.png" />
+    <Content Include="Content\template_admin\lib\gritter\images\gritter-long.png" />
+    <Content Include="Content\template_admin\lib\gritter\images\gritter.png" />
+    <Content Include="Content\template_admin\lib\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\template_admin\lib\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\template_admin\lib\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Content\template_admin\lib\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Content\template_admin\lib\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\template_admin\lib\jquery.backstretch.min.js" />
+    <Content Include="Content\template_admin\lib\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Content\template_admin\lib\jquery.nicescroll.js" />
+    <Content Include="Content\template_admin\lib\jquery.scrollTo.min.js" />
+    <Content Include="Content\template_admin\lib\jquery.sparkline.js" />
+    <Content Include="Content\template_admin\lib\jquery.tagsinput.js" />
+    <Content Include="Content\template_admin\lib\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\template_admin\lib\jquery\jquery.js" />
+    <Content Include="Content\template_admin\lib\jquery\jquery.min.js" />
+    <Content Include="Content\template_admin\lib\morris-conf.js" />
+    <Content Include="Content\template_admin\lib\morris\morris.min.js" />
+    <Content Include="Content\template_admin\lib\php-mail-form\validate.js" />
+    <Content Include="Content\template_admin\lib\raphael\raphael.min.js" />
+    <Content Include="Content\template_admin\lib\sparkline-chart.js" />
+    <Content Include="Content\template_admin\lib\tasks.js" />
+    <Content Include="Content\template_admin\lib\xchart\d3.v3.min.js" />
+    <Content Include="Content\template_admin\lib\xchart\xcharts.css" />
+    <Content Include="Content\template_admin\lib\xchart\xcharts.min.js" />
+    <Content Include="Content\template_admin\lib\zabuto_calendar.js" />
+    <Content Include="Content\template_admin\lobby.html" />
+    <Content Include="Content\template_admin\lock_screen.html" />
+    <Content Include="Content\template_admin\login.html" />
+    <Content Include="Content\template_admin\mail_compose.html" />
+    <Content Include="Content\template_admin\mail_view.html" />
+    <Content Include="Content\template_admin\morris.html" />
+    <Content Include="Content\template_admin\panels.html" />
+    <Content Include="Content\template_admin\pricing_table.html" />
+    <Content Include="Content\template_admin\profile.html" />
+    <Content Include="Content\template_admin\Readme.txt" />
+    <Content Include="Content\template_admin\responsive_table.html" />
+    <Content Include="Content\template_admin\todo_list.html" />
+    <Content Include="Content\template_admin\xchart.html" />
+    <Content Include="Content\template_tienda\about.html" />
+    <Content Include="Content\template_tienda\cart.html" />
+    <Content Include="Content\template_tienda\checkout.html" />
+    <Content Include="Content\template_tienda\contact.html" />
+    <Content Include="Content\template_tienda\css\aos.css" />
+    <Content Include="Content\template_tienda\css\bootstrap.min.css" />
+    <Content Include="Content\template_tienda\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\template_tienda\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\template_tienda\css\bootstrap\bootstrap.css" />
+    <Content Include="Content\template_tienda\css\jquery-ui.css" />
+    <Content Include="Content\template_tienda\css\magnific-popup.css" />
+    <Content Include="Content\template_tienda\css\owl.carousel.min.css" />
+    <Content Include="Content\template_tienda\css\owl.theme.default.min.css" />
+    <Content Include="Content\template_tienda\css\style.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.bootstrap.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.foundation.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.foundation.min.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.jqueryui.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.semanticui.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\jquery.dataTables.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\css\jquery.dataTables.min.css" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\images\sort_asc.png" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\images\sort_asc_disabled.png" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\images\sort_both.png" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\images\sort_desc.png" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\images\sort_desc_disabled.png" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.bootstrap.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.foundation.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.foundation.min.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.jqueryui.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.semanticui.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\jquery.dataTables.js" />
+    <Content Include="Content\template_tienda\datatable\DataTables-1.10.24\js\jquery.dataTables.min.js" />
+    <Content Include="Content\template_tienda\datatable\datatables.css" />
+    <Content Include="Content\template_tienda\datatable\datatables.js" />
+    <Content Include="Content\template_tienda\datatable\datatables.min.css" />
+    <Content Include="Content\template_tienda\datatable\datatables.min.js" />
+    <Content Include="Content\template_tienda\fonts\flaticon\backup.txt" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\flaticon.css" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\flaticon.html" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\_flaticon.css" />
+    <Content Include="Content\template_tienda\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="Content\template_tienda\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="Content\template_tienda\fonts\icomoon\demo.html" />
+    <Content Include="Content\template_tienda\fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="Content\template_tienda\fonts\icomoon\Read Me.txt" />
+    <Content Include="Content\template_tienda\fonts\icomoon\style.css" />
+    <Content Include="Content\template_tienda\images\bg_1.jpg" />
+    <Content Include="Content\template_tienda\images\bg_2.jpg" />
+    <Content Include="Content\template_tienda\images\hero_1.jpg" />
+    <Content Include="Content\template_tienda\images\hero_bg.jpg" />
+    <Content Include="Content\template_tienda\images\hero_bg_2.jpg" />
+    <Content Include="Content\template_tienda\images\person_1.jpg" />
+    <Content Include="Content\template_tienda\images\person_2.jpg" />
+    <Content Include="Content\template_tienda\images\person_3.jpg" />
+    <Content Include="Content\template_tienda\images\person_4.jpg" />
+    <Content Include="Content\template_tienda\images\person_5.jpg" />
+    <Content Include="Content\template_tienda\images\products_1.png" />
+    <Content Include="Content\template_tienda\images\product_01.png" />
+    <Content Include="Content\template_tienda\images\product_02.png" />
+    <Content Include="Content\template_tienda\images\product_03.png" />
+    <Content Include="Content\template_tienda\images\product_04.png" />
+    <Content Include="Content\template_tienda\images\product_05.png" />
+    <Content Include="Content\template_tienda\images\product_06.png" />
+    <Content Include="Content\template_tienda\images\product_07_large.png" />
+    <Content Include="Content\template_tienda\images\shoe.png" />
+    <Content Include="Content\template_tienda\images\wave.svg" />
+    <Content Include="Content\template_tienda\images\women.jpg" />
+    <Content Include="Content\template_tienda\index.html" />
+    <Content Include="Content\template_tienda\js\aos.js" />
+    <Content Include="Content\template_tienda\js\bootstrap.min.js" />
+    <Content Include="Content\template_tienda\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\template_tienda\js\jquery-ui.js" />
+    <Content Include="Content\template_tienda\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\template_tienda\js\main.js" />
+    <Content Include="Content\template_tienda\js\owl.carousel.min.js" />
+    <Content Include="Content\template_tienda\js\popper.min.js" />
+    <Content Include="Content\template_tienda\js\slick.min.js" />
+    <Content Include="Content\template_tienda\main.html" />
+    <Content Include="Content\template_tienda\readme.txt" />
+    <Content Include="Content\template_tienda\shop-single.html" />
+    <Content Include="Content\template_tienda\shop.html" />
+    <Content Include="Content\template_tienda\thankyou.html" />
+    <Content Include="Correos\pedidoActividad.html" />
+    <Content Include="Correos\datosActualizados.html" />
+    <Content Include="Correos\pedidoRecibido.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\template_admin\lib\advanced-datatable\images\Sorting icons.psd" />
+    <Content Include="Content\template_admin\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\template_admin\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\template_admin\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\template_admin\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\template_admin\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\template_admin\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\template_admin\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\template_admin\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\template_admin\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\notification\.gitattributes" />
+    <Content Include="Content\notification\.gitignore" />
+    <Content Include="Content\notification\.jscsrc" />
+    <Content Include="Content\notification\.jshintrc" />
+    <Content Include="Content\notification\.travis.yml" />
+    <Content Include="Content\notification\build\toastr.js.map" />
+    <Content Include="Content\notification\CHANGELOG.md" />
+    <Content Include="Content\notification\LICENSE" />
+    <Content Include="Content\notification\nuget\content\content\toastr.less" />
+    <Content Include="Content\notification\nuget\content\content\toastr.scss" />
+    <Content Include="Content\notification\nuget\content\scripts\toastr.min.js.map" />
+    <Content Include="Content\notification\nuget\toastr.1.0.0.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.0.0.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.0.1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.0.1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.0.2.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.0.2.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.0.3.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.0.3.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.0.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.0.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.2.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.2.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.3.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.4.1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.4.1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.4.2.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.4.2.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.4.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.4.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.1.5.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.1.5.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.2.0.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.2.0.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.2.1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.2.1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.2.2.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.2.2.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.3.0.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.3.0.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.1.3.1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.1.3.1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.2.0.0-rc1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.2.0.0-rc1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.2.0.1.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.2.0.1.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.2.0.2.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.2.0.2.nuspec" />
+    <Content Include="Content\notification\nuget\toastr.2.0.3.nupkg" />
+    <Content Include="Content\notification\nuget\toastr.2.0.3.nuspec" />
+    <Content Include="Content\notification\package-lock.json" />
+    <Content Include="Content\notification\package.json" />
+    <Content Include="Content\notification\README.md" />
+    <Content Include="Content\notification\release checklist.md" />
+    <Content Include="Content\notification\toastr.less" />
+    <Content Include="Content\notification\toastr.scss" />
+    <Content Include="Content\template_tienda\.DS_Store" />
+    <Content Include="Content\template_tienda\css\bootstrap.min.css.map" />
+    <Content Include="Content\template_tienda\fonts\.DS_Store" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\Flaticon.woff2" />
+    <Content Include="Content\template_tienda\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="Content\template_tienda\fonts\flaticon\license\license.pdf" />
+    <Content Include="Content\template_tienda\fonts\icomoon\fonts\icomoon.eot" />
+    <Content Include="Content\template_tienda\fonts\icomoon\fonts\icomoon.ttf" />
+    <Content Include="Content\template_tienda\fonts\icomoon\fonts\icomoon.woff" />
+    <Content Include="Content\template_tienda\fonts\icomoon\selection.json" />
+    <Content Include="Content\template_tienda\images\.DS_Store" />
+    <Content Include="Content\template_tienda\prepros-6.config" />
+    <Content Include="Content\template_tienda\scss\.DS_Store" />
+    <Content Include="Content\template_tienda\scss\bootstrap\.DS_Store" />
+    <Content Include="Content\template_tienda\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_alert.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_badge.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_button-group.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_buttons.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_card.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_carousel.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_close.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_code.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_forms.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_functions.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_grid.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_images.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_input-group.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_list-group.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_media.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_mixins.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_modal.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_nav.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_navbar.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_pagination.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_popover.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_print.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_progress.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_reboot.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_root.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_tables.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_transitions.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_type.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_utilities.scss" />
+    <Content Include="Content\template_tienda\scss\bootstrap\_variables.scss" />
+    <Content Include="Content\template_tienda\scss\style.scss" />
+    <Content Include="Content\template_tienda\scss\_site-base.scss" />
+    <Content Include="Content\template_tienda\scss\_site-blocks.scss" />
+    <Content Include="Content\template_tienda\scss\_site-navbar.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\config\conexion.js" />
+    <Content Include="Scripts\js\config\msgConfig.js" />
+    <Content Include="Scripts\js\config\navbar.js" />
+    <Content Include="Scripts\datatables.js" />
+    <Content Include="Scripts\js\config\temp_img\temp.txt" />
+    <Content Include="Scripts\js\system\administrador\siteAdministrador.js" />
+    <Content Include="Scripts\js\system\administrador\siteEditar.js" />
+    <Content Include="Scripts\js\system\cancelados\siteDetalle.js" />
+    <Content Include="Scripts\js\system\cancelados\sitePedido.js" />
+    <Content Include="Scripts\js\system\categorias\siteCategoria.js" />
+    <Content Include="Scripts\js\system\categorias\siteFormulario.js" />
+    <Content Include="Scripts\js\system\coberturas\siteCobertura.js" />
+    <Content Include="Scripts\js\system\coberturas\siteFormulario.js" />
+    <Content Include="Scripts\js\system\configuraciones\siteFormulario.js" />
+    <Content Include="Scripts\js\system\entregados\siteDetalle.js" />
+    <Content Include="Scripts\js\system\entregados\sitePedido.js" />
+    <Content Include="Scripts\js\system\login\siteLogin.js" />
+    <Content Include="Scripts\js\system\ofertas\siteFormulario.js" />
+    <Content Include="Scripts\js\system\ofertas\siteOferta.js" />
+    <Content Include="Scripts\js\system\pedidos\sitePedido.js" />
+    <Content Include="Scripts\js\system\pedidos\siteDetalle.js" />
+    <Content Include="Scripts\js\system\productos\siteFormulario.js" />
+    <Content Include="Scripts\js\system\productos\siteProducto.js" />
+    <Content Include="Scripts\js\system\reportes\siteReporte.js" />
+    <Content Include="Scripts\js\system\reposiciones\siteReposicion.js" />
+    <Content Include="Scripts\js\system\reposiciones\siteFormulario.js" />
+    <Content Include="Scripts\js\system\tienda\siteBusqueda.js" />
+    <Content Include="Scripts\js\system\tienda\sitePedido.js" />
+    <Content Include="Scripts\js\system\tienda\sitePedidos.js" />
+    <Content Include="Scripts\js\system\tienda\siteCuenta.js" />
+    <Content Include="Scripts\js\system\tienda\siteCarrito.js" />
+    <Content Include="Scripts\js\system\tienda\siteRegistro.js" />
+    <Content Include="Scripts\js\system\tienda\siteProducto.js" />
+    <Content Include="Scripts\js\system\tienda\siteCategoria.js" />
+    <Content Include="Scripts\js\system\tienda\siteMaster.js" />
+    <Content Include="Scripts\js\system\tienda\siteTienda.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\validadores.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Scripts\js\config\routing.js" />
+    <Content Include="Views\Shared\_Layout_Administrador.cshtml" />
+    <Content Include="Views\Administrador\Bienvenida.cshtml" />
+    <Content Include="Views\Administrador\EditarCuenta.cshtml" />
+    <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Categorias\Categoria.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Productos\Producto.cshtml" />
+    <Content Include="Views\Ofertas\Index.cshtml" />
+    <Content Include="Views\Ofertas\Oferta.cshtml" />
+    <Content Include="Views\Coberturas\Index.cshtml" />
+    <Content Include="Views\Coberturas\Cobertura.cshtml" />
+    <Content Include="Views\Configuraciones\Index.cshtml" />
+    <Content Include="Views\Tienda\Producto.cshtml" />
+    <Content Include="Views\Tienda\Categoria.cshtml" />
+    <Content Include="Views\Tienda\Busqueda.cshtml" />
+    <Content Include="Views\Tienda\Carrito.cshtml" />
+    <Content Include="Views\Tienda\Registro.cshtml" />
+    <Content Include="Views\Tienda\Gracias.cshtml" />
+    <Content Include="Views\Tienda\Cuenta.cshtml" />
+    <Content Include="Views\Tienda\Pedidos.cshtml" />
+    <Content Include="Views\Tienda\Pedido.cshtml" />
+    <Content Include="Views\Pedidos\Index.cshtml" />
+    <Content Include="Views\Pedidos\Pedido.cshtml" />
+    <Content Include="Views\Entregados\Index.cshtml" />
+    <Content Include="Views\Entregados\Pedido.cshtml" />
+    <Content Include="Views\Cancelados\Index.cshtml" />
+    <Content Include="Views\Cancelados\Pedido.cshtml" />
+    <Content Include="Views\Reposiciones\Index.cshtml" />
+    <Content Include="Views\Reposiciones\reposicion.cshtml" />
+    <Content Include="Views\Reportes\Index.cshtml" />
+    <Content Include="Views\Home\Error404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Imagenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1266</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44330/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

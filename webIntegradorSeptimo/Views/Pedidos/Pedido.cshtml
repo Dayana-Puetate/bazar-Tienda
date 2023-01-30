@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Pedido";
+    Layout = "~/Views/Shared/_Layout_Administrador.cshtml";
+}
+<div class="container-fluid">
+    <h3 class="texto-verde"><i class="fa fa-angle-right p-2 "></i> PEDIDO <span id="idPedido"></span></h3>
+    <hr style="height: 1px; background-color: #4ECDC4; border: none; margin:0" />
+
+    <h5 class="texto-verde mt-2 text-center" id="espere" hidden>Cargando . . .</h5>
+    <div class="container" id="contenedor" hidden>
+        <div class="row mb-5">
+            <div class="w-100 text-center mt-5 mb-5">
+                <a class="btn btn-theme btn-sm text-uppercase" href="~/Pedidos">Volver a pedidos pendientes</a>
+            </div>
+
+
+            <div class="col-md-12 mb-5">
+                <div class="col-md-12 text-left border-bottom mb-1">
+                    <h3 class="text-black h4 text-uppercase">Datos Envío</h3>
+                </div>
+                <table class="table table-borderless table-sm">
+                    <tbody id="cuerpoTablaEnvio">
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-md-12 table-responsive" id="tablaCarrito">
+                <div class="col-md-12 text-left border-bottom mb-1">
+                    <h3 class="text-black h4 text-uppercase">Detalle Pedido</h3>
+                </div>
+
+                <div class="site-blocks-table">
+                    <table class="table table-bordered table-sm" id="tabla">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">Imagen</th>
+                                <th class="product-name">Producto</th>
+                                <th class="product-price">Descuento</th>
+                                <th class="product-quantity">Precio</th>
+                                <th class="product-quantity">Cantidad</th>
+                                <th class="product-quantity">Iva</th>
+                                <th class="product-quantity">Envío</th>
+                                <th class="product-total">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-sm text-center" id="contenedorBotones">
+                <button class="btn btn-danger btn-md " type="button" id="btnCancelar" onclick="preguntar()" hidden>Cancelar Pedido</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12 text-left border-bottom mb-1">
+                    <h3 class="text-black h4 text-uppercase">Tracking de pedido</h3>
+                </div>
+                <table class="table table-striped table-sm">
+                    <tbody id="cuerpoTablaTracking">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 pl-5">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-12 text-right border-bottom mb-5">
+                                <h3 class="text-black h4 text-uppercase">Recargos</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-muted">Subtotal</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$<span id="valorSubtotal">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-muted">Envio</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$<span id="valorEnvio">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-muted">Iva</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$<span id="valorIva">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <span class="text-black font-weight-bold">Total</span>
+                            </div>
+                            <div class="col-md-6 text-right font-weight-bold">
+                                <strong class="text-black">$<span id="valorTotal">0</span></strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/js/config/navbar.js"></script>
+<script src="~/Scripts/js/system/pedidos/siteDetalle.js"></script>
+

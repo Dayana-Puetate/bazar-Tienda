@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-light">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-5 mr-auto">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+
+                </div>
+            </div>
+            <div class="col-md-6 pt-3">
+                <h2 class="text-black" id="nombre"></h2>
+                <h5 class="text-muted" id="categoria"></h5>
+                <p id="descripcion">
+
+                </p>
+
+                <p id="precio"></p>
+
+                <div class="mb-5">
+                    <div class="input-group mb-3" style="max-width: 220px;">
+                        <div class="input-group-prepend" id="btnMenos">
+                        </div>
+                        <input type="text" class="form-control text-center" value="1" placeholder=""
+                               aria-label="Example text with button addon" aria-describedby="button-addon1" id="cantidad" readonly>
+                        <div class="input-group-append" id="btnMas">
+                        </div>
+                    </div>
+                    <p><strong class="text-primary">EN STOCK: </strong><span id="stock"></span></p>
+                </div>
+
+                <p><button class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" type="button" onclick="agregarCarrito()">Añadir a la cesta </button></p>
+
+                <div class="mt-5">
+                    <h5 class="text-primary">Recargos</h5>
+
+
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th class="table-bordered" style="border-left:none;border-right:none;">Detalle</th>
+                                <th class='text-right table-bordered' style="border-left:none;border-right:none;">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-borderless">
+                            <tr>
+                                <td>Subtotal</td>
+                                <td class='text-right'>$<span id="valorSubtotal">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Costos de envío</td>
+                                <td class='text-right'>$<span id="costoEnvio">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Iva <span id="valorIva">12</span>%</td>
+                                <td class='text-right'>$<span id="costoIva">0</span></td>
+                            </tr>
+                            <tr class="table-bordered" style="border-left:none;border-right:none;border-bottom:none">
+                                <td class='text-right font-weight-bold'>Total a pagar</td>
+                                <td class='text-right'>$<span id="valorTotal">0</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Content/template_tienda/js/owl.carousel.min.js"></script>
+<script src="~/Scripts/js/system/tienda/siteProducto.js"></script>
+
+

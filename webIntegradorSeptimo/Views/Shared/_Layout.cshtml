@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAZAR - TIENDA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="~/Content/template_admin/img/admin_icon.png" rel="icon">
+    <link rel="stylesheet" href="~/Content/template_tienda/fonts/icomoon/style.css">
+    <link href="~/Content/template_admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/template_tienda/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/css/aos.css">
+    <link rel="stylesheet" href="~/Content/template_tienda/css/style.css">
+    <link href="~/Content/notification/build/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/template_tienda/datatable/datatables.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="w-100 h-100 text-center" style="padding-top:19em;" id="espereMaestro">
+
+        <h3 class="js-logo-clone text-center">BA<strong class="text-primary">ZAR</strong></h3>
+    </div>
+    <div class="site-wrap" id="contenedorMaestro" hidden>
+        <div class="site-navbar py-2">
+
+            <div class="search-wrap">
+                <div class="container">
+                    <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                    <div>
+                        <input type="text" class="form-control" id="txtBusquedaMaster" placeholder="Busque algún producto...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="logo">
+                        <div class="site-logo">
+                            <a href="~/" class="js-logo-clone">ba<strong class="text-primary">ZAR</strong></a>
+                        </div>
+                    </div>
+                    <div class="main-nav d-none d-lg-block">
+                        <nav class="site-navigation text-right text-md-center" role="navigation">
+                            <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                <li class="dirHome"><a href="~/" >Home</a></li>
+                                <li class="has-children">
+                                    <a id="dirProducto">Productos</a>
+                                    <ul class="dropdown" id="categoriasDropdown">
+                                    </ul>
+                                </li>
+                                @*<li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>*@
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="icons">
+                        <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                        <a href="~/Tienda/Carrito" class="icons-btn d-inline-block bag">
+                            <span class="icon-shopping-bag"></span>
+                            <span class="number" style="padding-top:0.1em;padding-right:0.075em" id="masterItemsCarrito">0</span>
+                        </a>
+                        <div class="dropdown d-inline-block pl-3" id="masterDropdownSesion">
+                            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-header text-center">
+                                    <span class="text-primary text-uppercase"> @Session["userNombre"]</span>
+                                </div>
+                                <div class="dropdown-divider text-primary"></div>
+                                <a class="dropdown-item text-muted" href="~/Tienda/Cuenta">Cuenta</a>
+                                <a class="dropdown-item text-muted" href="~/Tienda/Pedidos">Pedidos</a>
+                                <div class="dropdown-divider text-primary"></div>
+                                <button class="dropdown-item text-muted" style="cursor:pointer" onclick="cerrarSesion()">Salir</button>
+                            </div>
+                        </div>
+                        <a href="~/Tienda/Registro" class="icons-btn d-inline-block pr-3 pl-2" id="masterAccederSesion">
+                            <span class="text-primary">Acceder</span>
+                        </a>
+                        <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none">
+                            <span class="icon-menu"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            @RenderBody()
+
+        </div>
+            <hr style="margin:0;padding:0;background-color:#E4E4E4" />
+
+        <footer class="site-footer bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+
+                        <div class="block-7">
+                            <h3 class="footer-heading mb-4">Acerca de  <strong>BA</strong><strong class="text-primary">ZAR</strong></h3>
+                            <p id="pieAbout">
+                                SIN CONFIGURACIÓN
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="block-5 mb-5">
+                            <h3 class="footer-heading mb-4">Contáctanos</h3>
+                            <ul class="list-unstyled ">
+                                <li class="address" id="pieDireccion">SIN CONFIGURACIÓN</li>
+                                <li class="phone"><a href="tel://" id="pieTelefono">SIN CONFIGURACION</a></li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | DP <a href="https://www.linkedin.com/in/dayana-puetate-368079254/" target="_blank"
+                                                                                                                                           class="text-primary">UTA</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    @*<script src="~/Content/template_tienda/js/jquery-3.3.1.min.js"></script>*@
+    <script src="~/Content/template_tienda/js/jquery-ui.js"></script>
+    <script src="~/Content/template_tienda/js/popper.min.js"></script>
+    <script src="~/Content/template_tienda/js/bootstrap.min.js"></script>
+    <script src="~/Content/template_tienda/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/template_tienda/js/aos.js"></script>
+    @*<script src="~/Content/template_tienda/js/main.js"></script>*@
+    @*<script src="~/Scripts/validadores.js"></script>*@
+    <script src="~/Content/notification/build/toastr.min.js"></script>
+    <script src="~/Scripts/js/config/routing.js"></script>
+    <script src="~/Scripts/js/config/conexion.js"></script>
+    <script src="~/Scripts/js/config/msgConfig.js"></script>
+    <script src="~/Scripts/js/system/tienda/siteMaster.js"></script>
+</body>
+</html>

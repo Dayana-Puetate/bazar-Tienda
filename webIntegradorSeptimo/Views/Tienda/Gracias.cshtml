@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Gracias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <span class="icon-check_circle display-3 text-primary"></span>
+                <h2 class="display-3 text-black">Gracias por su compra!</h2>
+                <p class="lead">Su orden se ha procesado exitosamente.</p>
+                <p class="lead mb-5">Revise su correo electrónico y siga los pasos para realizar el pago.</p>
+                <p><a href="../../Home" class="btn btn-md height-auto px-4 py-3 btn-primary">Volver a la tienda</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $("#contenedorMaestro").attr("hidden", true);
+    $("#espereMaestro").attr("hidden", false);
+    $("#espereMaestro").attr("hidden", true);
+    $("#contenedorMaestro").attr("hidden", false);
+</script>
+

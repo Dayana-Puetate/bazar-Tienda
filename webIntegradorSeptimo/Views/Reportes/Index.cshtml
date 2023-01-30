@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Administrador.cshtml";
+}
+
+<div class="container-fluid">
+    <h3 class="texto-verde ocultar"><i class="fa fa-angle-right p-2 "></i> Reportes</h3>
+    <hr class="ocultar" style="height: 1px; background-color: #4ECDC4; border: none; margin:0" />
+
+    <h5 class="texto-verde mt-2 text-center" id="espere" hidden>Cargando . . .</h5>
+
+    <div class="container h-100 mt-3 p-2" id="contenedor"  hidden>
+        <div class="col-sm-12" id="selecciones">
+            <div class="text-center" id="encabezadoReporte" hidden>
+                <h2><strong>BA</strong><strong class="texto-verde">ZAR</strong></h2>
+                <div class="col-sm-6 ml-auto mr-auto" id="detalleReporte">
+
+                </div>
+            </div>
+            <div class="col-sm-12 ml-auto mr-auto">
+                <div class="row ocultar">
+                    <div class="form-group col-sm-4 text-center">
+                        <label class="texto-verde text-center font-weight-bold" style="font-size:14px">Tipo</label>
+                        <select class="form-control form-control-sm round-form" id="cmbEstado">
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-4 text-center">
+                        <label class="texto-verde text-center font-weight-bold" style="font-size:14px">Desde</label>
+                        <input type="date" id="desde" class="form-control form-control-sm round-form" value="" />
+                    </div>
+                    <div class="form-group col-sm-4 text-center">
+                        <label class="texto-verde text-center font-weight-bold" style="font-size:14px">Hasta</label>
+                        <input type="date" id="hasta" class="form-control form-control-sm round-form" value="" />
+                    </div>
+
+                    <div class="text-center col-sm">
+                        <button type="button" class="btn btn-theme btn-sm btn-round" onclick="cargarTabla()">GENERAR</button>
+                    </div>
+                </div>
+                <hr class="ocultar" style="display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;" />
+                <div class="text-center col-sm ocultar" id="divImprimir">
+
+                </div>
+                <table class="table table-bordered mt-3">
+                    <tbody id="cuerpoTabla">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="~/Scripts/js/config/navbar.js"></script>
+    <script src="~/Scripts/js/system/reportes/siteReporte.js"></script>

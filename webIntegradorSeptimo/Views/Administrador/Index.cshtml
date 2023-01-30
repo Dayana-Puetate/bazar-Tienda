@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es-ec" style="background-color:#22242A">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Septimo Sistemas">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>bAZAR.com</title>
+    <link href="~/Content/template_admin/img/admin_icon.png" rel="icon">
+    <link href="~/Content/template_admin/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="~/Content/template_admin/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/template_admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/template_admin/css/style.css" rel="stylesheet">
+    <link href="~/Content/template_admin/css/style-responsive.css" rel="stylesheet">
+    <link href="~/Content/notification/build/toastr.min.css" rel="stylesheet" />
+</head>
+
+<body style="background-color:#22242A">
+
+    <div id="login-page " >
+        <div class="container">
+            <form enctype='multipart/form-data'  name="frm" id="frm" class="form-login shadow" style="margin-top:10em" >
+                <h2 class="form-login-heading ">
+                    bAZAR.COM
+                    <i class="fa fa-shopping-bag" style="font-size:15px;vertical-align:top;margin-top:2.5px"></i>
+                </h2>
+                <div class="login-wrap">
+                    <input type="text" class="form-control validarVacio" id="usuario" name="usuario" autocomplete="on" placeholder="Usuario" maxlength="100" autofocus>
+                    <span class="text-danger font-weight-bold" id="usuarioVal" hidden>Ingrese su usuario</span>
+                    <br>
+                    <input type="password" class="form-control validarVacio" id="contra" name="contra" placeholder="Contraseña" maxlength="100">
+                    <span class="text-danger font-weight-bold" id="contraVal" hidden>Ingrese su contraseña</span>
+                    <div class="mt-4">
+                        <button class="btn btn-theme btn-block" href="~/Content/template_admin/index.html" id="btnIngresar" type="button" onclick="ingresar(this)" ><i class="fa fa-lock"></i> INGRESAR</button>
+                    </div>
+
+                    <hr />
+                    <div class="text-center">
+                        <span><strong>© Copyright </strong> - Séptimo Software</span>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="~/Content/template_admin/lib/jquery/jquery.min.js"></script>
+    <script src="~/Content/template_admin/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/template_admin/lib/jquery.backstretch.min.js"></script>
+    <script src="~/Content/notification/build/toastr.min.js"></script>
+    <script src="~/Scripts/validadores.js"></script>
+    <script src="~/Scripts/js/config/routing.js"></script>
+    <script src="~/Scripts/js/config/conexion.js"></script>
+    <script src="~/Scripts/js/config/msgConfig.js"></script>
+    <script src="~/Scripts/js/system/login/siteLogin.js"></script>
+    <script>
+        //$.backstretch("../../Content/template_admin/img/fondo_login.jpg", {
+        //    speed: 500
+        //});
+
+
+
+        document.getElementById("usuario").addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                ingresar(document.getElementById("btnIngresar"));
+            }
+        });
+
+        document.getElementById("contra").addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                ingresar(document.getElementById("btnIngresar"));
+            }
+        });
+
+    </script>
+</body>
+
+</html>
+

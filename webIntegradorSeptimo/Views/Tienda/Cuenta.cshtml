@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Cuenta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mb-5 ml-auto mr-auto mb-md-0">
+                <h2 class="h3 mb-3 text-black">Su cuenta</h2>
+                <form id="frm" name="frm" enctype='multipart/form-data' class="p-3 p-lg-5 border bg-white">
+                    <input type="text" name="idCliente" id="idCliente" value="0" hidden/>
+                    <div class="form-group">
+                        <label for="idCobertura" class="text-black">Ciudad <span class="text-danger">*</span></label>
+                        <select id="idCobertura" name="idCobertura" class="form-control validarVacio">
+                        </select>
+                        <span class="text-danger" id="idCoberturaVal" hidden>Seleccione una ciudad</span>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="nombre" class="text-black">Nombre <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control validarVacio" id="nombre" name="nombre" maxlength="150">
+                            <span class="text-danger" id="nombreVal" hidden>Ingrese su nombre</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="apellido" class="text-black">Apellido <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control validarVacio" id="apellido" name="apellido" maxlength="150">
+                            <span class="text-danger" id="apellidoVal" hidden>Ingrese su apellido</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="direccion" class="text-black">Dirección <span class="text-danger">*</span></label>
+                            <textarea type="text" class="form-control validarVacio" id="direccion" name="direccion" style="resize:none"></textarea>
+                            <span class="text-danger" id="direccionVal" hidden>Ingrese su dirección</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="correo" class="text-black">Correo <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control validarVacio validarCorreo" id="correo" name="correo" maxlength="100">
+                            <span class="text-danger" id="correoVal" hidden>Ingrese su correo</span>
+                            <span class="text-danger" id="correoCorVal" hidden>Ingrese un correo válido</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="celular" class="text-black">Teléfono <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control validarVacio" id="celular" name="celular" maxlength="10">
+                            <span class="text-danger" id="celularVal" hidden>Ingrese un telefóno</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-5">
+                        <div class="col-md-6">
+                            <label for="confir" class="text-black">Contraseña <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control validarVacio " id="contra" name="contra">
+                            <span class="text-danger" id="contraVal" hidden>Ingrese una contraseña</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="confir" class="text-black">Confirmar contraseña<span class="text-danger">*</span></label>
+                            <input type="password" class="form-control validarVacio" id="confir" name="confir">
+                            <span class="text-danger" id="confirVal" hidden>Confirme su contraseña</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="button" onclick="guardar(this)">Guardar Cambios</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/validadores.js"></script>
+<script src="~/Scripts/js/system/tienda/siteCuenta.js"></script>

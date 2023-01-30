@@ -1,0 +1,28 @@
+﻿@media print {
+    #reporte {
+        -webkit-print-color-adjust: exact;
+    }
+
+    @page {
+        size: auto;
+        margin: 5mm;
+    }
+
+    .ocultar {
+        display: none !important;
+    }
+
+    #encabezadoReporte {
+        display: block !important;
+    }
+
+    style * {
+        visibility: hidden;
+    }
+    #sidebar{
+        display:none !important;
+    }
+    header{
+        display:none !important;
+    }
+}

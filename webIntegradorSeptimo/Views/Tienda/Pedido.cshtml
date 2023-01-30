@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Pedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="w-100 text-right pr-3">
+                <a class="btn btn-primary" href="~/Tienda/Pedidos">Volver a pedidos</a>
+            </div>
+            <div class="col-md-12" id="tablaCarrito">
+                <div class="text-center"><h5 class="text-muted text-uppercase">Pedido COD#<span id="idPedido"></span></h5></div>
+                <div class="site-blocks-table">
+                    <table class="table table-bordered" id="tabla">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">Imagen</th>
+                                <th class="product-name">Producto</th>
+                                <th class="product-price">Descuento</th>
+                                <th class="product-quantity">Precio</th>
+                                <th class="product-quantity">Cantidad</th>
+                                <th class="product-quantity">Iva</th>
+                                <th class="product-quantity">Envío</th>
+                                <th class="product-total">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5" id="cancelarBoton" hidden>
+            <div class="col-sm text-center">
+                <button class="btn btn-outline-danger btn-md " type="button" id="btnCancelar" onclick="preguntar()">Cancelar Pedido</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12 text-left border-bottom mb-1">
+                    <h3 class="text-black h4 text-uppercase">Tracking de pedido</h3>
+                </div>
+                <table class="table table-striped table-sm">
+                    <tbody id="cuerpoTablaTracking">
+
+                    </tbody>   
+                </table>
+            </div>
+            <div class="col-md-6 pl-5">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-12 text-right border-bottom mb-5">
+                                <h3 class="text-black h4 text-uppercase">Recargos</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-muted">Subtotal</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$<span id="valorSubtotal">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-muted">Envio</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$<span id="valorEnvio">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-muted">Iva</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$<span id="valorIva">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <span class="text-black font-weight-bold">Total</span>
+                            </div>
+                            <div class="col-md-6 text-right font-weight-bold">
+                                <strong class="text-black">$<span id="valorTotal">0</span></strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Content/template_tienda/datatable/datatables.js"></script>
+<script src="~/Content/template_admin/lib/advanced-datatable/js/datatables-spanish.js"></script>
+<script src="~/Scripts/js/system/tienda/sitePedido.js"></script>
+
+

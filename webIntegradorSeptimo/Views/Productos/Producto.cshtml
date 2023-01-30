@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Producto";
+    Layout = "~/Views/Shared/_Layout_Administrador.cshtml";
+}
+
+<div class="container-fluid">
+    <h3 class="texto-verde" id="titulo"><i class="fa fa-angle-right p-2 "></i> Nuevo Producto</h3>
+    <hr style="height: 1px; background-color: #4ECDC4; border: none; margin:0" />
+
+
+    <div class="container">
+        <h5 class="texto-verde mt-2 text-center" id="espere">Cargando . . .</h5>
+        <div class="card h-100 mt-3" id="contenedor" hidden>
+            <form enctype='multipart/form-data' name="frm" id="frm" class="card-body pb-4 ">
+                <input type="text" id="idProducto" name="idProducto" value="0" hidden />
+
+
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        NOMBRE <span class="text-danger">*</span>
+                    </div>
+                    <input type="text" class="col-sm-5 form-control form-control-sm round-form validarVacio" id="nombre" name="nombre" value="" maxlength="250" />
+                    <span class="text-danger font-weight-bold pl-2" id="nombreVal" hidden>Ingrese un nombre</span>
+                </div>
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        DESCRIPCIÓN <span class="text-danger">*</span>
+                    </div>
+                    <textarea type="text" style="resize:none;" class="col-sm-5 form-control form-control-sm round-form validarVacio" id="descripcion" name="descripcion" value=""></textarea>
+                    <span class="text-danger font-weight-bold pl-2" id="descripcionVal" hidden>Ingrese una descripción</span>
+                </div>
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        PRECIO <span class="text-danger">*</span>
+                    </div>
+                    <input type="number" class="col-sm-2 form-control form-control-sm round-form validarVacio validarDecimal text-right" id="pvp" name="pvp" value="" maxlength="250" />
+                    <span class="text-danger font-weight-bold pl-2" id="pvpVal" hidden>Ingrese un precio decimal valido</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        STOCK <span class="text-danger">*</span>
+                    </div>
+                    <input type="number" class="col-sm-2 form-control form-control-sm round-form validarVacio validarDecimal text-right" id="stock" name="stock" value="" maxlength="250" />
+                    <span class="text-danger font-weight-bold pl-2" id="stockVal" hidden>Ingrese un stock decimal valido</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        IVA <span class="text-danger">*</span>
+                    </div>
+                    <input type="number" class="col-sm-2 form-control form-control-sm round-form validarVacio validarIva text-right" id="iva" name="iva" value="" maxlength="250" />
+                    <span class="text-danger font-weight-bold pl-2" id="ivaVal" hidden>Ingrese un iva entero válido</span>
+                </div>
+
+
+                <div class="row form-inline pt-2 col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        CATEGORÍA <span class="text-danger">*</span>
+                    </div>
+                    <select class="form-control form-control-sm col-sm-2 round-form validarVacio" id="idCategoria" name="idCategoria">
+                    </select>
+                    <span class="text-danger font-weight-bold pl-2" id="idCategoriaVal" hidden>Seleccione una categoría válida</span>
+                </div>
+
+
+                <div class="row form-inline pb-2 col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        PAGA ENVIO? <span class="text-danger">*</span>
+                    </div>
+                    <select class="form-control form-control-sm col-sm-2 round-form validarVacio" id="paga_envio" name="paga_envio">
+                        <option value="true">SI</option>
+                        <option value="false">NO</option>
+                    </select>
+
+                </div>
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        IMÁGENES <span class="text-danger">*</span><br />
+                        <span class="text-danger font-weight-bold " id="input_fileVal" hidden>Debe seleccionar al menos 1 imagen</span>
+                    </div>
+                    <div class="files" id="files1" style="width:49em">
+                        <div class="jclc_img  container shadow row p-3 mt-3 border" style="min-height: 16em; max-height: 16em;overflow-y: auto;border-radius: 0.4em;">
+                            <div class="text-center w-100 jclc_advice" style="border:5px dashed #E4E4E4">
+                                <h2 style="color:#E4E4E4;font-size: larger;margin: 4em;">Nada seleccionado</h2>
+                            </div>
+                        </div>
+
+                        <span class="btn btn-theme btn-sm btn-file mt-2 mr-3 float-right">
+                            Examinar  <input type="file" name="files1" accept=".jpg, .jpeg, .png" />
+                        </span>
+                    </div>
+                </div>
+
+
+
+                <div class="pt-4 col-sm text-center">
+                    <a class="btn btn-theme04 mr-1" href="~/Productos/" id="btnCancelar">CANCELAR</a>
+                    <button class="btn btn-theme" type="button" onclick="guardar(this)">GUARDAR</button>
+
+                </div>
+                <input type="text" id="vectorEliminarImagenes" name="vectorEliminarImagenes" value="" hidden />
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Content/jclc_files/jclc_files.js"></script>
+<script src="~/Scripts/js/config/navbar.js"></script>
+<script src="~/Scripts/js/system/productos/siteFormulario.js"></script>
+
+
+

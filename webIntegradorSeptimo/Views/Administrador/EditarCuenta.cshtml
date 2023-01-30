@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "EditarCuenta";
+    Layout = "~/Views/Shared/_Layout_Administrador.cshtml";
+}
+
+<div class="container-fluid">
+    <h3 class="texto-verde"><i class="fa fa-angle-right p-2 "></i> Editar cuenta</h3>
+    <hr style="height: 1px; background-color: #4ECDC4; border: none; margin:0" />
+
+
+    <div class="container">
+        <h5 class="texto-verde mt-2 text-center" id="espere">Cargando . . .</h5>
+        <div class="card h-100 mt-3" id="contenedor" hidden>
+            <form enctype='multipart/form-data' name="frm" id="frm" class="card-body pb-4 ">
+                <input type="text" id="idAdministrador" name="idAdministrador" value="0" hidden/>   
+                <div class="row form-inline col-sm pt-4 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold  pr-3">
+                        CÉDULA <span class="text-danger">*</span>
+                    </div>
+
+                    <input type="text" class="form-control form-control-sm round-form validarVacio validarCedula" id="cedula" name="cedula" value="" maxlength="13" />
+                    <span class="text-danger font-weight-bold pl-2" id="cedulaVal" hidden>Ingrese su cédula</span>
+                    <span class="text-danger font-weight-bold pl-2" id="cedulaCedVal" hidden>Cédula incorrecta</span>
+
+                </div>
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        NOMBRE <span class="text-danger">*</span>
+                    </div>
+                    <input type="text" class="col-sm-5 form-control form-control-sm round-form validarVacio" id="nombre" name="nombre" value="" maxlength="250" />
+                    <span class="text-danger font-weight-bold pl-2" id="nombreVal" hidden>Ingrese su nombre</span>
+                </div>
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold  pr-3">
+                        APELLIDO <span class="text-danger">*</span>
+                    </div>
+                    <input type="text" class="col-sm-5 form-control form-control-sm round-form validarVacio" id="apellido" name="apellido" value="" maxlength="250" />
+                    <span class="text-danger font-weight-bold pl-2" id="apellidoVal" hidden>Ingrese su apellido</span>
+                </div>
+
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold  pr-3">
+                        TELÉFONO <span class="text-danger">*</span>
+                    </div>
+                    <input type="text" class="col-sm-3 form-control form-control-sm round-form validarVacio" id="telefono" name="telefono" value="" maxlength="10" />
+                    <span class="text-danger font-weight-bold pl-2" id="telefonoVal" hidden>Ingrese su teléfono</span>
+                </div>
+
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        CORREO <span class="text-danger">*</span>
+                    </div>
+                    <input type="text" class="col-sm-4 form-control form-control-sm round-form validarVacio validarCorreo" id="mail" name="mail" value="" maxlength="50" />
+                    <span class="text-danger font-weight-bold pl-2" id="mailVal" hidden>Ingrese su correo</span>
+                    <span class="text-danger font-weight-bold pl-2" id="mailCorVal" hidden>Ingrese un correo válido</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        USUARIO <span class="text-danger">*</span>
+                    </div>
+                    <input type="text" class="col-sm-2 form-control form-control-sm round-form validarVacio" id="usuario" name="usuario" value="" maxlength="20" />
+                    <span class="text-danger font-weight-bold pl-2" id="usuarioVal" hidden>Ingrese su usuario</span>
+                </div>
+
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        CONTRASEÑA <span class="text-danger">*</span>
+                    </div>
+                    <input type="password" class="col-sm-3 form-control form-control-sm round-form validarVacio" id="contra" name="contra" value="" maxlength="100" />
+                    <span class="text-danger font-weight-bold pl-2" id="contraVal" hidden>Ingrese su contraseña</span>
+                </div>
+
+                <div class="row form-inline col-sm pt-1 ml-auto mr-auto">
+                    <div style="width:180px;" class="font-weight-bold pr-3">
+                        CONFIRMAR CONTRASEÑA <span class="text-danger">*</span>
+                    </div>
+                    <input type="password" class="col-sm-3 form-control form-control-sm round-form validarVacio" id="confir" name="confir" value="" maxlength="100" />
+                    <span class="text-danger font-weight-bold pl-2" id="confirVal" hidden>Ingrese su contraseña</span>
+                </div>
+
+
+                <div class="pt-4 col-sm-7 text-center">
+                    <a class="btn btn-theme04 mr-1" href="~/Administrador/" id="btnCancelar">CANCELAR</a>
+                    <button class="btn btn-theme" type="button" onclick="guardar(this)">GUARDAR</button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/js/system/administrador/siteEditar.js"></script>
